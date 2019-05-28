@@ -1,0 +1,56 @@
+
+.logo{
+    height: 90%;
+    background-color: #339967;
+}
+
+.logo img{
+    float: left;
+    position: relative;
+    margin-left: -15px;
+    height: 100%;
+}
+
+.coluna-esquerda{
+    font-family: "Open Sans Condensed", sans-serif;
+    position: relative;
+    padding-top: 8%;
+    height: 90%;
+    background-color: white;
+}
+
+.coluna-esquerda form{
+    margin-top: 40%;
+    text-align: center;
+    font-size: 1.4em
+}
+
+#btn-entrar {
+    margin-top: 10%;
+    font-size: 1.2em;
+    width: 30%;    
+}
+
+.rodape{
+    background-color: darkgray;
+    padding-bottom: 0;
+    height: 10%;
+    overflow: hidden;
+}
+
+.rodape p{
+    padding-top: 1.5%;
+    margin-left: 8%;
+    float: left;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-size: 1.8em;
+    text-shadow: -2px, -5px, -5px;
+}
+
+.logo-rodape {
+    margin-top: -20px;
+    height: auto;
+    width: auto;
+    float: right;
+    position: relative; 
+}

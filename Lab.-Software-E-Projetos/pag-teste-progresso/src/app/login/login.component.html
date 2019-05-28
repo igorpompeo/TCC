@@ -1,0 +1,38 @@
+<div class="container-fluid main">
+  <div class="row">
+    <!-- elemento principal -->
+    <div class="col-sm-8 col-md-8 col-lg-8 logo">
+      <img src="assets/img/uam2.png" class="img-responsive" alt="anhembi morumbi">
+    </div>
+
+    <!-- elemento formulario -->
+    <div class="col-sm-4 col-md-4 col-lg-4 coluna-esquerda">
+      <h1 class="text-center">Bem vindo</h1>
+
+      <form [formGroup]="loginForm" (submit)="login()">
+
+        <div class="form-group">
+          <label for="login">Digite seu RA</label>
+          <input formControlName="login" class="form-control" type="text" id="login" required placeholder="Ex: 20882816" />
+        </div>
+        <div class="form-group">
+          <label for="senha">Digite sua senha</label>
+          <input formControlName="senha" class="form-control" type="password" id="senha" required placeholder="Ex: Senha@123" />
+        </div>
+
+        <input id="btn-entrar" class="btn btn-success" type="submit" value="Entrar" [disabled]="loginForm.invalid">
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <div class="row rodape">
+    <p>APS - laboratório de projeto</p>
+    <div class="logo-rodape">
+      <a href="https:sou.anhembi.br" target="_blank">
+        <img src="assets/img/uam-rodape.png" height="130px"></a>
+    </div>
+  </div>
+
+</div>
