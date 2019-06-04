@@ -15,9 +15,7 @@ app.use(function (req, res, next) {
 app.get('/api/query', function(req, res){
 // comando na conexão criada
 
-    knex.select('pNome').from('aluno').then(result =>{
-        console.log(result);
-    });
+    knex.execSQLQuery(sqlQry, res);
 
 });
 
