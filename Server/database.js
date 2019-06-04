@@ -42,4 +42,3 @@ function execSQLQuery(sqlQry, res) {
 }
 
 module.exports = knex;
-module.exports = execSQLQuery;

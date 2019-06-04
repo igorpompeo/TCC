@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';

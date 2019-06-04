@@ -15,7 +15,12 @@ app.use(function (req, res, next) {
 app.get('/api/query', function(req, res){
 // comando na conexão criada
 
-    knex.execSQLQuery(sqlQry, res);
+    knex.select('id', 'ra', 'pNome').from('aluno').where({
+        ra: '20198778'
+    }).then(result =>{
+        console.log(result);
+        res.json(result);
+    });
 
 });
 
@@ -26,9 +31,20 @@ app.post('/api/login', (req, res) => {
     console.log(req.body);
 
     // fazer logica de validação e retornar json se esta autenticado ou não
-    res.json({
-        autorizado: true
-    });
+    if (knex.select('login','senha').from('usuarios').where({login: '20198778'}).then(result => {
+        
+        res.json({
+            autorizado: true
+        });
+    })) {
+        // res.json({
+        //     autorizado: true
+        // });
+    } else {
+        res.json({
+            autorizado: false
+        });
+    }
 
 });
 
