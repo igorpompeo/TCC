@@ -12,14 +12,12 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.get('/api/pegar-todos-aluno', function(req, res){
-// comando na conexão criada    
-    knex.select().from('aluno').then(result => {
-        console.log(result);
-        // retorno na tela do usuário
-        res.json({result});
-    })
+app.get('/api/query', function(req, res){
+// comando na conexão criada
 
+    knex.select('pNome').from('aluno').then(result =>{
+        console.log(result);
+    });
 
 });
 
