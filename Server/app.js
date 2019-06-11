@@ -81,12 +81,19 @@ app.post('/api/login', (req, res) => {
                 .select('pNome','sNome')
                 .where({ ra: req.body.login })
                 .then( result => {
-                    console.log(result);
-                    res.json({
-                        autorizado: true,
-                        ra: req.body.login,
-                        nome: result[0].pNome + " " + result[0].sNome
-                    });
+                    if(result.length !== 0 )
+                    {
+                        res.json({
+                            autorizado: true,
+                            ra: req.body.login,
+                            nome: result[0].pNome + " " + result[0].sNome
+                        });
+                    } else {
+                        res.json({
+                            autorizado: true,
+                            ra: req.body.login
+                        });
+                    }
                 } );
         }
     })
