@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-my-pie-chart',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyPieChartComponent implements OnInit {
 
-  public pieChartLabels = ['CCOVON07', 'CCOPA2N07', 'CCOPA1N07', 'CCOMON07'];
-  public pieChartData = [23, 10, 78, 5];
+  public pieChartLabels = [];
+  public pieChartData = [];
   public pieChartType = 'pie';
 
-  constructor() { }
+
+  constructor(private http: HttpClient) {
+    this.http.post('http://localhost:3000/api/query_pizza', {}).subscribe(res => {
+      this.pieChartLabels = res['curso'];
+      this.pieChartData = res['notas'];
+    })
+  }
 
   ngOnInit() {
   }

@@ -1,14 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 .logo{
-    height: 90%;
-    background-color: #339967;
+    height: 100%;
+    background-color: #00ac8d;
 }
 
 .logo img{
     float: left;
     position: relative;
     margin-left: -15px;
-    margin-bottom: 130px;
+    margin-bottom: 190px;
     height: 29em;
 }
 
@@ -29,7 +29,7 @@
 #btn-entrar {
     margin-top: 10%;
     font-size: 1.2em;
-    width: 30%;    
+    width: 30%;
 }
 
 .rodape{
@@ -53,5 +53,5 @@
     height: auto;
     width: auto;
     float: right;
-    position: relative; 
+    position: relative;
 }

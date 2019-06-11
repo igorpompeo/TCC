@@ -3,7 +3,6 @@ import { UserService } from './user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DatabaseService } from '../database.service';
 
 @Component({
   selector: 'app-login',
@@ -18,20 +17,33 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private dataBase: DatabaseService
   ) { }
 
+  errLogin () {
+    console.warn('Login Fail');
+    document.getElementById('login').setAttribute('_login_fail','');
+    document.getElementById('senha').setAttribute('_login_fail','');
+  }
+
   login(){
-    
+
     const login = this.loginForm.get('login').value;
     const senha = this.loginForm.get('senha').value;
 
-    console.log(this.dataBase);
-        
     this.userService.login(login, senha).subscribe(res => {
-      console.log(res); // response do servidor
-      this.router.navigate(['home']);
+      if (res['autorizado']){
+        localStorage.removeItem('currentRa');
+        localStorage.removeItem('currentName');
+
+        localStorage.setItem('currentRa', res['ra']);
+        localStorage.setItem('currentName', res['nome']);
+
+        this.router.navigate(['home']);
+      } else {
+        this.errLogin();
+      }
     })
+
   }
 
   ngOnInit() {

@@ -1,11 +1,38 @@
-<p>Este gráfico representa sua quantidade de acertos das questoes Objetivas e Gerais</p>
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/home">Início</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/bar-chart">Especificas X Gerais</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/line-chart">Notas por Semestre</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/pie-chart">Ranking por Turma</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/">Sair</a>
+    </li>
+  </ul>
+
 <div>
-  <div style="display: block">
+  <div style="display: block; width: 100%; margin: 0 auto;">
     <canvas baseChart
-           [datasets]="barChartData"
-           [labels]="barChartLabels"
-           [options]="barChartOptions"
-           [legend]="barChartLegend"
-           [chartType]="barChartType"></canvas>
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+    </canvas>
+  </div>
+</div>
+
+<div class="row rodape">
+  <p>APS - laboratório de projeto</p>
+  <div class="logo-rodape">
+    <a href="https:sou.anhembi.br" target="_blank">
+      <img src="assets/img/uam-rodape.png" width="190px" height="155px"></a>
   </div>
 </div>

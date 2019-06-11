@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-my-line-chart',
@@ -17,15 +18,22 @@ public lineChartOption = {
   public lineChartType = 'line';
   public lineChartLegend = true;
 
-  public lineChartData = [
-    {
-      data: [8, 7.5, 5, 9, 4.6, 3.6, 5, 6],
-      borderWidth: 6,
-      label: 'Nota'
-    }
-  ]
+  public lineChartData = []
 
-  constructor() { }
+  public currentRa: string;
+
+  constructor(private http: HttpClient) {
+    this.currentRa = (localStorage.getItem('currentRa') !== null ? localStorage.getItem('currentRa') : '');
+    this.http.post('http://localhost:3000/api/query_linha', { ra: this.currentRa }).subscribe(res => {
+      this.lineChartData = [
+        {
+          data: res['notas'],
+          borderWidth: 6,
+          label: 'Nota'
+        }
+      ]
+    })
+  }
 
   ngOnInit() {
   }
