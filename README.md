@@ -4,6 +4,7 @@ Ferramentas necessárias:
 - NodeJS instalado: https://nodejs.org/en/
 - MariaDB instalado: https://mariadb.com
 Importar o arquivo progresso.sql para o banco de dados: https://www.digitalocean.com/community/tutorials/how-to-import-and-export-databases-in-mysql-or-mariadb
+- VisualStudio Code, para conseguir abrir o projeto: https://code.visualstudio.com
 
 Execução do programa:
 Pelo CMD ou PowerShell ou Terminal, acessar as pastas: C:\Users\IgorPompeoTavares\Desktop\TCC\Lab.-Software-E-Projetos\pag-teste-progresso e executar o comando npm install;
