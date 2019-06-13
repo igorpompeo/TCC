@@ -46,11 +46,12 @@ app.post('/api/query_linha', function(req, res){
 });
 
 app.post('/api/query_pizza', function (req, res) {
-    let query = '	SELECT * FROM (\
-        SELECT DISTINCT(curso.descricao) AS descricao, prova_aluno.notaProva AS notaProva\
-        FROM curso LEFT JOIN prova_aluno ON curso.id = prova_aluno.id_curso \
-        ORDER BY notaProva DESC\
-    ) AS notas GROUP BY descricao';
+    let query = 'SELECT * FROM (\
+    (SELECT DISTINCT(aluno_curso.descricao) AS descricao, prova_aluno.notaProva AS notaProva\
+    FROM aluno_curso JOIN prova_aluno ON aluno_curso.id_aluno = prova_aluno.id_aluno \
+    WHERE aluno_curso.ra = 20198778\
+    ORDER BY notaProva DESC\
+    )) AS notas';
 
     knex
         .raw(query)
