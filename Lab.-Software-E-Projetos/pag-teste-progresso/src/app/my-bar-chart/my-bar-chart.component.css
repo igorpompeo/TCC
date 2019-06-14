@@ -1,0 +1,13 @@
+.nav *{
+    background-color: #00ac8d;
+	color: whitesmoke;
+    font-weight: bold;
+}
+
+div.rodape {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
